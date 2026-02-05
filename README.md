@@ -177,7 +177,7 @@ Real-world modeling using Java
 ## Author
 **Mahak Yadav**  
 B.Tech CSE (AI/ML)  
-IILM University  
+IILM University
 
 - GitHub: https: https://github.com/mahakyadav13-code/University_Enrollment_System
 - LinkedIn:https://www.linkedin.com/in/mahak-yadav-59369a2a7/
