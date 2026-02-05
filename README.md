@@ -163,7 +163,7 @@ University_Enrollment_System/
 ## How to Run the Project
 1. Clone the repository:
    ```bash
-   git clone https://github.com/adityasahani001/University_Enrollment_System.git
+   git clone https://github.com/mahakyadav13-code/University_Enrollment_System.git
    
 2. Open the project in IntelliJ IDEA
 3. Run Main.java
