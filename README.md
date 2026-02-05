@@ -175,13 +175,12 @@ Hands-on experience with exception handling
 Real-world modeling using Java
 
 ## Author
-**Aditya Sahani**  
+**Mahak Yadav**  
 B.Tech CSE (AI/ML)  
 IILM University  
 
-- GitHub: https://github.com/adityasahani001  
-- LinkedIn: https://www.linkedin.com/in/aditya-sahani-0955b02ab/
-
+- GitHub: https: https://github.com/mahakyadav13-code/University_Enrollment_System
+- LinkedIn:https://www.linkedin.com/in/mahak-yadav-59369a2a7/
 ---
 
 ## Note
