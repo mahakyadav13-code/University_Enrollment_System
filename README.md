@@ -1,233 +1,256 @@
-# 🎓 University Enrollment System
+# 🎓 University Enrollment System (Java OOP + Web UI)
 
-### A Java OOP-Based University Management Application with a Modern Web Interface
+> A modern, object-oriented Java application featuring a beautiful HTML/CSS Web UI, simulating a real-world university enrollment workflow.
 
-> A practical Java application that demonstrates Object-Oriented Programming through a real-world university enrollment workflow.
-
-![Java](https://img.shields.io/badge/Java-11%2B-blue.svg)
-![Frontend](https://img.shields.io/badge/Frontend-HTML%2FCSS%2FJavaScript-orange.svg)
-![Architecture](https://img.shields.io/badge/Architecture-Java%20OOP%20%2B%20HTTP-green.svg)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
+![Java Version](https://img.shields.io/badge/Java-11%2B-blue.svg)
+![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ---
 
-## 📖 About the Project
+## 📖 Project Overview
 
-The **University Enrollment System** is a Java-based application designed to simulate a real-world university enrollment process.
+The **University Enrollment System** is a robust Java-based application developed to demonstrate core **Object-Oriented Programming (OOP)** concepts. The project accurately models a university environment involving **Students**, **Professors**, **Courses**, and strict **Enrollment Rules**.
 
-The project combines **Core Java, Object-Oriented Programming, HTTP communication, and a modern web interface** to create an interactive university management workflow.
+This application covers essential topics including:
 
-Instead of demonstrating OOP concepts individually, this project connects them together through real entities such as:
-
-* 👨‍🎓 Students
-* 👨‍🏫 Professors
-* 📚 Courses
-* 📝 Enrollments
-* ⚠️ Enrollment Rules
-* 🌐 Web Interface
-
-The backend is developed using Java's built-in `HttpServer`, while the frontend uses HTML, CSS, and Vanilla JavaScript.
+* **Inheritance** — IS-A relationships
+* **Aggregation** — HAS-A relationships
+* **Encapsulation & Data Hiding**
+* **Custom Exception Handling**
 
 ---
 
-## 🎯 Project Objectives
+## ✨ Features
 
-The main objectives of this project are to:
+* 👨‍🎓 **Student Management**
+  Register students with unique IDs, emails, and CGPAs.
 
-* Apply Java OOP concepts to a practical problem.
-* Model real-world university entities using classes.
-* Demonstrate relationships between Java objects.
-* Implement custom exception handling.
-* Validate course enrollment capacity.
-* Connect a Java backend with a browser-based frontend.
-* Understand basic client-server communication.
-* Build a clean and maintainable project structure.
+* 👨‍🏫 **Professor Allocation**
+  Assign professors to specific departments and courses.
 
----
+* 📚 **Course Enrollment**
+  Enroll students into courses with defined capacities.
 
-# ✨ Features
+* ⚠️ **Custom Error Handling**
+  Prevent over-enrollment using the custom `EnrollmentException`.
 
-### 👨‍🎓 Student Management
-
-Create and manage student objects containing information such as:
-
-* Student name
-* Email
-* Roll number
-* CGPA
-
-Each student can be associated with a course through the enrollment system.
+* 🌐 **Modern Web UI**
+  Interact with the Java backend through a modern glassmorphic HTML/CSS web interface without relying on bulky frameworks.
 
 ---
 
-### 👨‍🏫 Professor Management
+## 🛠️ Technologies Used
 
-Professors are represented as separate Java objects.
+| Category          | Technology                          |
+| ----------------- | ----------------------------------- |
+| Backend           | Core Java                           |
+| HTTP Server       | `com.sun.net.httpserver.HttpServer` |
+| Frontend          | HTML5, CSS3, JavaScript             |
+| API Communication | Fetch API                           |
+| Architecture      | Object-Oriented Programming (OOP)   |
+| Design            | Glassmorphism                       |
+| IDE               | IntelliJ IDEA                       |
 
-The system supports:
+---
 
+## 📂 Project Structure
+
+```text
+University_Enrollment_System/
+├── .idea/
+├── web/
+│   └── index.html                    # HTML/CSS Frontend
+├── src/
+│   └── University_Enrollment_System/
+│       ├── Main.java                 # Console application entry point
+│       ├── UniversityWebServer.java  # Built-in Java HTTP Server
+│       ├── Person.java               # Abstract base class
+│       ├── Student.java              # Inherits Person
+│       ├── Professor.java            # Inherits Person
+│       ├── Course.java               # Manages enrollments
+│       └── EnrollmentException.java  # Custom exception
+├── LICENSE
+└── README.md
+```
+
+---
+
+## 🏛️ Architecture & OOP Mapping
+
+### Class Architecture
+
+* **Person (Abstract)**
+  Acts as the base class and demonstrates abstraction for `Student` and `Professor`.
+
+* **Student**
+  Implements encapsulation and automatically generates unique `rollNo` values using static properties.
+
+* **Professor**
+  Represents the professor entity and can be assigned to courses.
+
+* **Course**
+  Acts as the core enrollment component. It demonstrates **Aggregation** by maintaining a list of enrolled `Student` objects and a `Professor`.
+
+* **EnrollmentException**
+  A custom exception extending Java's `Exception` class to handle enrollment capacity restrictions.
+
+---
+
+## 🌐 Server Architecture
+
+The **UniversityWebServer** uses Java's native `HttpServer` to create and run the web application on port `8080`.
+
+### API Endpoints
+
+#### `POST /api/enroll`
+
+Accepts URL-encoded form data submitted from the web interface, creates a `Student` object, and attempts to enroll the student into the course.
+
+#### `GET /api/details`
+
+Retrieves the current course details directly from the `Course` object.
+
+---
+
+## 🚀 How to Run the Project
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/University_Enrollment_System.git
+```
+
+### 2️⃣ Open the Project
+
+Open the project in **IntelliJ IDEA** or your preferred Java IDE.
+
+### 3️⃣ Compile the Source Files
+
+Compile the Java source files using your IDE or Java compiler.
+
+---
+
+## 🌐 Option 1: Run the Web Application
+
+The web interface is the recommended way to explore the project.
+
+1. Open `UniversityWebServer.java`.
+2. Run the application.
+3. The server will start on port `8080`.
+4. Open your browser.
+5. Navigate to:
+
+```text
+http://localhost:8080
+```
+
+6. Use the web interface to test the university enrollment workflow.
+
+---
+
+## 📟 Option 2: Run the Console Application
+
+Run:
+
+```text
+Main.java
+```
+
+The console application demonstrates:
+
+* Student creation
 * Professor creation
-* Department information
-* Course assignment
-* Relationship between professors and courses
+* Course creation
+* Student enrollment
+* Enrollment capacity handling
+* Custom exception handling
 
 ---
 
-### 📚 Course Management
+## 🎯 OOP Concepts Demonstrated
 
-Courses form the central part of the enrollment system.
-
-Each course can maintain:
-
-* Course name
-* Course capacity
-* Assigned professor
-* List of enrolled students
-
----
-
-### 📝 Course Enrollment
-
-Students can enroll in available courses through the web interface.
-
-The application checks course capacity before completing the enrollment.
+This project provides practical implementation of several important Java OOP concepts:
 
 ```text
-Student
-   │
-   ▼
-Enrollment Request
-   │
-   ▼
-Course Capacity Check
-   │
-   ├── Available ──► Enrollment Successful
-   │
-   └── Full ───────► EnrollmentException
+                 ┌─────────────────────┐
+                 │   Person (Abstract)  │
+                 └──────────┬──────────┘
+                            │
+                 ┌──────────┴──────────┐
+                 ▼                     ▼
+          ┌─────────────┐       ┌─────────────┐
+          │   Student   │       │  Professor  │
+          └──────┬──────┘       └──────┬──────┘
+                 │                     │
+                 └──────────┬──────────┘
+                            ▼
+                    ┌───────────────┐
+                    │    Course     │
+                    └───────┬───────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │ EnrollmentException │
+                 └─────────────────────┘
 ```
 
----
+### Key Concepts
 
-### ⚠️ Custom Exception Handling
+**🔹 Abstraction**
+`Person` provides a common abstract structure for people within the university.
 
-The application uses a custom exception:
+**🔹 Inheritance**
+`Student` and `Professor` inherit common functionality from `Person`.
 
-```java
-EnrollmentException
-```
+**🔹 Encapsulation**
+Data is protected through appropriate class structures and controlled access.
 
-This exception is triggered when a student attempts to enroll in a course that has reached its maximum capacity.
+**🔹 Aggregation**
+`Course` maintains relationships with students and professors.
 
-This keeps the business rule inside the backend rather than relying only on frontend validation.
+**🔹 Exception Handling**
+`EnrollmentException` handles situations where course capacity is exceeded.
 
----
-
-### 🌐 Modern Web Interface
-
-The project includes a browser-based UI built with:
-
-* HTML5
-* CSS3
-* Vanilla JavaScript
-* Fetch API
-
-The interface uses a modern **glassmorphism-inspired design** without requiring large frontend frameworks.
+**🔹 Static Members**
+Static properties are used for automatic student roll-number generation.
 
 ---
 
-# 🧠 OOP Concepts Demonstrated
+## 💡 Learning Outcomes
 
-One of the primary goals of the project is to demonstrate how Java OOP concepts work together in a practical system.
+Through this project, the following practical concepts are demonstrated:
 
----
-
-## 🔷 1. Abstraction
-
-`Person` acts as an abstract base class for common attributes and behavior.
-
-```text
-             Person
-            /      \
-           /        \
-      Student      Professor
-```
-
-This allows common functionality to be defined once and reused by derived classes.
+* Building applications using **Java OOP**
+* Designing classes and relationships
+* Implementing inheritance and abstraction
+* Applying encapsulation and data hiding
+* Working with custom exceptions
+* Connecting a Java backend with a web interface
+* Creating HTTP endpoints using Java's built-in server
+* Using JavaScript Fetch API for backend communication
+* Structuring a maintainable Java project
 
 ---
 
-## 🧬 2. Inheritance
+## 👨‍💻 Author
 
-Both `Student` and `Professor` inherit from `Person`.
+**Mahak Yadav**
+*B.Tech — Artificial Intelligence & Data Science | IILM University*
 
-This represents an **IS-A relationship**:
-
-```text
-Student IS-A Person
-
-Professor IS-A Person
-```
+* 🐙 **GitHub:** @https://github.com/mahakyadav13-code
+* 💼 **LinkedIn:** https://www.linkedin.com/in/mahak-yadav-59369a2a7/
 
 ---
 
-## 🔒 3. Encapsulation
+## 📌 Note
 
-The classes protect their internal data and provide controlled access through appropriate methods.
+This project was originally developed for **academic and learning purposes** to demonstrate Java Object-Oriented Programming concepts and university enrollment workflows.
 
-```text
-Private Data
-     ↓
-Getter / Setter
-     ↓
-Controlled Access
-```
-
-This helps maintain data integrity.
+The project has been enhanced with a custom **HTML/CSS web interface** to provide a more interactive way of testing and demonstrating the Java backend.
 
 ---
 
-## 🔗 4. Aggregation
+## ⭐ If You Find This Project Useful
 
-A `Course` maintains relationships with students and professors.
-
-```text
-             Course
-             /    \
-            /      \
-       Professor   Students
-                     │
-                List<Student>
-```
-
-This demonstrates a **HAS-A relationship**.
-
----
-
-## 🚨 5. Custom Exception Handling
-
-The system defines its own:
-
-```java
-EnrollmentException
-```
-
-to represent course-capacity-related errors.
-
----
-
-## 🔢 6. Static Members
-
-Static members are used where information needs to be maintained at the class level, such as generating unique student roll numbers.
-
----
-
-# 🏗️ System Architecture
-
-The application follows a lightweight client-server architecture.
-
-```text
-┌─────────────────────────────────┐
-│          Web Browser            │
-│                                 │
-```
+If you found this project helpful for learning **Java OOP, backend development, or web integration**, consider giving the repository a ⭐ on GitHub.
