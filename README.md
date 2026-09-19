@@ -238,7 +238,7 @@ Through this project, the following practical concepts are demonstrated:
 **Mahak Yadav**
 *B.Tech — Artificial Intelligence & Data Science | IILM University*
 
-* 🐙 **GitHub:** @https://github.com/mahakyadav13-code
+* 🐙 **GitHub:** https://github.com/mahakyadav13-code
 * 💼 **LinkedIn:** https://www.linkedin.com/in/mahak-yadav-59369a2a7/
 
 ---
